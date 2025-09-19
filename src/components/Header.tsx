@@ -16,6 +16,13 @@ export default function Header() {
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 
+    const closeAll = () => {
+        setMobileOpen(false);
+        setAboutOpen(false);
+        setSchoolOpen(false);
+        setGalleryOpen(false);
+    };
+
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -343,16 +350,4 @@ function DropdownLink({ href, children }: { href: string; children: React.ReactN
             {children}
         </Link>
     );
-}
-
-function closeAll() {
-    const [mobileOpen, setMobileOpen] = useState(false);
-    const [aboutOpen, setAboutOpen] = useState(false);
-    const [schoolOpen, setSchoolOpen] = useState(false);
-    const [galleryOpen, setGalleryOpen] = useState(false);
-    const [mounted, setMounted] = useState(false);
-    setMobileOpen(false);
-    setAboutOpen(false);
-    setSchoolOpen(false);
-    setGalleryOpen(false);
 }
