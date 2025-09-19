@@ -1,5 +1,13 @@
-import { FaCalendarAlt, 
-    FaTheaterMasks, FaRunning, FaUsers, FaPalette, FaGraduationCap, FaClock, FaMapMarkerAlt, FaTrophy, FaSeedling, FaBell, FaCalendarPlus 
+import {
+    FaCalendarAlt,
+    FaTheaterMasks, 
+    FaRunning, 
+    FaUsers, 
+    FaPalette, 
+    FaGraduationCap, 
+    FaClock, 
+    FaMapMarkerAlt, 
+    FaTrophy, FaSeedling, FaBell, FaCalendarPlus
 } from "react-icons/fa";
 
 export default function EventsPage() {
