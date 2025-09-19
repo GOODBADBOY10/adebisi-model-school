@@ -24,3 +24,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .dropdown-item {
+    @apply block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600;
+  }
+
+  .mobile-link {
+    @apply block py-2 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded;
+  }
+
+  .footer-link {
+    @apply hover:text-white transition-colors;
+  }
+
+  .social-link {
+    @apply text-gray-300 hover:text-white transition-colors;
+  }
+}

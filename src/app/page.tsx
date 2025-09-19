@@ -1,103 +1,200 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useState } from "react";
+
+const slides = [
+  {
+    id: 1,
+    title: "Excellence in Education",
+    desc: "Nurturing minds, building futures, and inspiring greatness in every student",
+    button: "Learn More",
+    image: "/GOODBADBOY.jpg",
+  },
+  {
+    id: 2,
+    title: "Innovation & Growth",
+    desc: "Preparing students for tomorrow's challenges with today's best practices",
+    button: "Discover More",
+    image: "/GOODBADBOY1.jpg",
+  },
+  {
+    id: 3,
+    title: "Community & Values",
+    desc: "Building character, fostering community, creating lifelong learners",
+    button: "Join Us",
+    image: "/GOODBADBOY2.jpg",
+  },
+];
+
+export default function HomePage() {
+  const [active, setActive] = useState(0);
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="pt-20">
+      {/* ================= HERO SLIDER ================= */}
+      <section id="home" className="relative h-screen overflow-hidden">
+        <div className="slider-container h-full relative">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`slider-image absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === active ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="hero-overlay absolute inset-0 bg-black/40"></div>
+              <div className="relative h-full flex items-center justify-center">
+                <div className="text-center text-white px-4">
+                  <h2 className="text-5xl md:text-7xl font-bold mb-6">
+                    {slide.title}
+                  </h2>
+                  <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    {slide.desc}
+                  </p>
+                  <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+                    {slide.button}
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Slider Dots */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActive(index)}
+              className={`slider-dot w-3 h-3 rounded-full transition-all ${index === active
+                  ? "bg-white"
+                  : "bg-white/50 hover:bg-white/80"
+                }`}
+            ></button>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= CONTENT SECTIONS ================= */}
+      <div className="bg-white">
+        {/* Section 1: Welcome */}
+        <section className="py-16 bg-gray-50 text-center">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Welcome to Our School
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Quality Education</h3>
+                <p className="text-gray-600">Placeholder text here.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Community Focus</h3>
+                <p className="text-gray-600">Placeholder text here.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Excellence</h3>
+                <p className="text-gray-600">Placeholder text here.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Mission */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Our Mission & Vision
+            </h2>
+            <p className="text-lg text-gray-600">
+              Placeholder mission and vision text here...
+            </p>
+          </div>
+        </section>
+
+        {/* Section 3: Academic Programs */}
+        <section className="py-16 bg-blue-50 text-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Academic Programs
+            </h2>
+            <p className="text-lg text-gray-600 mb-12">
+              Placeholder description for academic programs.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Early Years</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Primary</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Middle School</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-3">Senior School</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Facilities */}
+        <section className="py-16 bg-white text-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              World-Class Facilities
+            </h2>
+            <p className="text-lg text-gray-600 mb-12">
+              Placeholder description for facilities.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Science Labs</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Sports Complex</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Library</h3>
+                <p className="text-gray-600">Placeholder text.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: Student Life */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              Vibrant Student Life
+            </h2>
+            <p className="text-lg text-gray-600">
+              Placeholder description for student life.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
