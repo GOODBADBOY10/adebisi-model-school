@@ -131,7 +131,11 @@ export default function HomePage() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3">Community Focus</h3>
-                <p className="text-gray-600">Placeholder text here.</p>
+                <p className="text-gray-600">We see education as a partnership, with students, parents, and teachers working together to create a supportive and engaging learning journey.
+
+                  Our school is more than just a place of learning; it's a close-knit community where every member is valued.
+
+                  We encourage you to get involved and join us in shaping a bright future for our students.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3">Excellence</h3>
