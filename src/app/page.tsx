@@ -122,8 +122,7 @@ export default function HomePage() {
               Welcome to Our School
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              We are delighted to welcome you to ADEBISI MODEL SCHOOLS.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
