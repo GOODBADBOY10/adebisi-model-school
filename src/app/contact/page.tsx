@@ -39,10 +39,9 @@ export default function ContactPage() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 1 }}
-                        // className="text-xl text-cyan-100"
                         className="text-xl text-black"
                     >
-                        We'd love to hear from you. Get in touch with us today!
+                        We would love to hear from you. Get in touch with us today!
                     </motion.p>
                 </div>
             </section>
@@ -82,11 +81,11 @@ export default function ContactPage() {
                             <h3 className="text-xl font-semibold mb-3 text-gray-800">Email</h3>
                             <p className="text-gray-700 mb-2">General Inquiries:</p>
                             <p className="text-lg font-semibold text-green-700">
-                                info@pinnacleacademy.edu
+                                info@adebisi.edu
                             </p>
                             <p className="text-gray-700 mb-2 mt-4">Admissions:</p>
                             <p className="text-lg font-semibold text-green-700">
-                                admissions@pinnacleacademy.edu
+                                admissions@adebisi.edu
                             </p>
                         </motion.div>
 
