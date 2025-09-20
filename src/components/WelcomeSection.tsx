@@ -26,7 +26,10 @@ export default function WelcomeSection() {
     };
 
     return (
-        <section className="py-16 bg-gray-50">
+        // <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-gray-50"> real
+        // <section className="py-16 bg-gradient-to-br from-blue-100 via-amber-50 to-white">
+        // {/* <section className="py-16 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-50"> */}
+        <section className="py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Column: Image */}
@@ -36,26 +39,28 @@ export default function WelcomeSection() {
                             alt="Welcome to our school"
                             width={1920}
                             height={1080}
-                            className="rounded-lg shadow-lg w-full h-[83vh] object-cover"
+                            className="rounded-xl shadow-2xl w-full h-[80vh] object-cover border-4 border-blue-200"
                         />
                     </div>
 
-                    {/* Right Column: Text + Features (Animated) */}
+                    {/* Right Column: Text + Features */}
                     <motion.div
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         viewport={{ once: false, amount: 0.2 }}
                     >
-                        <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                        <h2 className="text-4xl font-extrabold text-blue-700 mb-6">
                             Welcome to Our School
                         </h2>
-                        <p className="text-lg text-gray-600 mb-8">
+                        <p className="text-lg text-gray-700 mb-8">
                             We are delighted to welcome you to{" "}
-                            <span className="font-semibold">ADEBISI MODEL SCHOOLS</span>.
+                            <span className="font-semibold text-amber-600">
+                                ADEBISI MODEL SCHOOLS
+                            </span>.
                         </p>
 
-                        {/* Features with staggered animation */}
+                        {/* Features */}
                         <motion.div
                             variants={container}
                             initial="hidden"
@@ -66,9 +71,11 @@ export default function WelcomeSection() {
                             {/* Feature 1 */}
                             <motion.div
                                 variants={item}
-                                className="bg-white p-6 rounded-lg shadow-md"
+                                className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition"
                             >
-                                <h3 className="text-xl font-semibold mb-3">Quality Education</h3>
+                                <h3 className="text-xl font-semibold mb-3 text-blue-700">
+                                    Quality Education
+                                </h3>
                                 <p className="text-gray-600">
                                     We believe in fostering a community where every student can
                                     thrive. Our commitment is to provide a nurturing and
@@ -80,9 +87,11 @@ export default function WelcomeSection() {
                             {/* Feature 2 */}
                             <motion.div
                                 variants={item}
-                                className="bg-white p-6 rounded-lg shadow-md"
+                                className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-amber-500 hover:shadow-xl transition"
                             >
-                                <h3 className="text-xl font-semibold mb-3">Community Focus</h3>
+                                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                                    Community Focus
+                                </h3>
                                 <p className="text-gray-600">
                                     Education is a partnership among students, parents, and
                                     teachers. Our school is more than a place of learning; it’s a
@@ -93,9 +102,11 @@ export default function WelcomeSection() {
                             {/* Feature 3 */}
                             <motion.div
                                 variants={item}
-                                className="bg-white p-6 rounded-lg shadow-md md:col-span-2"
+                                className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500 hover:shadow-xl transition md:col-span-2"
                             >
-                                <h3 className="text-xl font-semibold mb-3">Excellence</h3>
+                                <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                                    Excellence
+                                </h3>
                                 <p className="text-gray-600">
                                     We strive for excellence in academics, character, and
                                     leadership—preparing our students for success in school and
@@ -107,5 +118,6 @@ export default function WelcomeSection() {
                 </div>
             </div>
         </section>
+
     );
 }

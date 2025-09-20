@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { CheckCircle, Globe, GraduationCap, Users, Lightbulb } from "lucide-react";
 
 export default function MissionVision() {
     return (
-        <section className="py-16 bg-white">
+        // <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50"> real
+        <section className="py-16 bg-gradient-to-br from-blue-200 via-indigo-100 to-cyan-100">
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
                     Our Mission & Vision
@@ -17,38 +19,37 @@ export default function MissionVision() {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         viewport={{ once: false, amount: 0.2 }}
+                        className="bg-white p-8 rounded-xl shadow-md border-l-4 border-blue-600"
                     >
                         <h3 className="text-2xl font-semibold text-blue-700 mb-6">
                             Our Mission
                         </h3>
-                        <ul className="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
-                            <li>
+                        <ul className="space-y-4 text-gray-700 leading-relaxed">
+                            <li className="flex items-start gap-3">
+                                <GraduationCap className="w-6 h-6 text-blue-600 mt-1" />
                                 To provide a challenging and supportive academic environment
                                 that fosters critical thinking, creativity, and a lifelong love
-                                of learning, preparing students for success in a global society.
+                                of learning.
                             </li>
-                            <li>
+                            <li className="flex items-start gap-3">
+                                <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
                                 To empower every student with the knowledge, skills, and
-                                character necessary to achieve their full academic potential and
-                                become responsible, engaged citizens.
+                                character necessary to achieve their full potential.
                             </li>
-                            <li>
+                            <li className="flex items-start gap-3">
+                                <Users className="w-6 h-6 text-purple-600 mt-1" />
                                 To cultivate a nurturing community where every student thrives
-                                intellectually, socially, emotionally, and physically,
-                                developing into well-rounded individuals ready to make a
-                                positive impact.
+                                intellectually, socially, and emotionally.
                             </li>
-                            <li>
-                                Our mission is to create a forward-thinking educational
-                                experience that leverages technology and creativity to prepare
-                                students for the challenges and opportunities of the 21st
-                                century.
+                            <li className="flex items-start gap-3">
+                                <Lightbulb className="w-6 h-6 text-yellow-500 mt-1" />
+                                To create a forward-thinking educational experience that uses
+                                technology and creativity to prepare students for the future.
                             </li>
-                            <li>
-                                To build a diverse and inclusive learning community where
-                                respect, empathy, and integrity are paramount, encouraging
-                                students to contribute positively to their local and global
-                                communities.
+                            <li className="flex items-start gap-3">
+                                <Globe className="w-6 h-6 text-indigo-600 mt-1" />
+                                To build a diverse and inclusive community where respect and
+                                empathy guide positive contributions to society.
                             </li>
                         </ul>
                     </motion.div>
@@ -59,37 +60,37 @@ export default function MissionVision() {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         viewport={{ once: false, amount: 0.2 }}
+                        className="bg-white p-8 rounded-xl shadow-md border-l-4 border-indigo-600"
                     >
-                        <h3 className="text-2xl font-semibold text-blue-700 mb-6">
+                        <h3 className="text-2xl font-semibold text-indigo-700 mb-6">
                             Our Vision
                         </h3>
-                        <ul className="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
-                            <li>
+                        <ul className="space-y-4 text-gray-700 leading-relaxed">
+                            <li className="flex items-start gap-3">
+                                <Lightbulb className="w-6 h-6 text-yellow-500 mt-1" />
                                 To build a future where every graduate is a confident,
-                                compassionate, and courageous leader, equipped to innovate and
-                                inspire positive change in the world.
+                                compassionate, and courageous leader.
                             </li>
-                            <li>
-                                To be a beacon of educational excellence, continually evolving
-                                to meet the needs of a changing world and setting new standards
-                                for student achievement and well-being.
+                            <li className="flex items-start gap-3">
+                                <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+                                To be a beacon of educational excellence, evolving to meet the
+                                needs of a changing world.
                             </li>
-                            <li>
+                            <li className="flex items-start gap-3">
+                                <Users className="w-6 h-6 text-purple-600 mt-1" />
                                 To create an environment where diversity is celebrated,
-                                collaboration is key, and every member feels a sense of
-                                belonging and purpose, contributing to a thriving and sustainable
-                                future.
+                                collaboration is key, and belonging is universal.
                             </li>
-                            <li>
-                                To be at the forefront of educational innovation, consistently
-                                adapting our practices to provide cutting-edge learning
-                                experiences that inspire and prepare students for an
-                                unpredictable future.
+                            <li className="flex items-start gap-3">
+                                <Globe className="w-6 h-6 text-indigo-600 mt-1" />
+                                To lead in educational innovation, preparing students for an
+                                unpredictable but opportunity-filled future.
                             </li>
                         </ul>
                     </motion.div>
                 </div>
             </div>
         </section>
+
     );
 }
