@@ -65,7 +65,7 @@ export default function Footer() {
                 {/* Footer Bottom */}
                 <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <div className="text-gray-300 mb-4 md:mb-0">
-                        © 2025 Pinnacle Academy. All Rights Reserved.
+                        © 2025 Adebisi Model School. All Rights Reserved.
                     </div>
 
                     {/* Social Links */}

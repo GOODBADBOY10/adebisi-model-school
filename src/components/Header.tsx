@@ -40,10 +40,10 @@ export default function Header() {
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-800">
-                                Adebisi Model School
+                                ADEBISI MODEL SCHOOL
                             </h1>
                             <p className="text-xs text-gray-600">
-                                Excellence in Education
+                                Learning and Piety
                             </p>
                         </div>
                     </div>
