@@ -4,6 +4,7 @@ import MissionVision from "@/components/MissionVision";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import WelcomeSection from "@/components/WelcomeSection";
+import Facilities from "@/components/Facilities";
 
 const slides = [
   {
@@ -155,30 +156,7 @@ export default function HomePage() {
         </section>
 
         {/* Section 4: Facilities */}
-        <section className="py-16 bg-white text-center">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              World-Class Facilities
-            </h2>
-            <p className="text-lg text-gray-600 mb-12">
-              Placeholder description for facilities.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Science Labs</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Sports Complex</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Library</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Facilities />
 
         {/* Section 5: Student Life */}
         <section className="py-16 bg-gray-50">
