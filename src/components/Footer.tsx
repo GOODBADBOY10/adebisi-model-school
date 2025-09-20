@@ -17,8 +17,8 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-semibold mb-4">About Our School</h3>
                         <ul className="space-y-2 text-gray-300">
-                            <li><Link href="#" className="footer-link">Our Mission</Link></li>
-                            <li><Link href="#" className="footer-link">Our Vision</Link></li>
+                            <li><Link href="#mission" className="footer-link">Our Mission</Link></li>
+                            <li><Link href="#mission" className="footer-link">Our Vision</Link></li>
                             <li><Link href="#" className="footer-link">Leadership Team</Link></li>
                             <li><Link href="#" className="footer-link">School History</Link></li>
                             <li><Link href="#" className="footer-link">Accreditations</Link></li>
