@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import {
-    GraduationCap,
     Menu,
     ChevronDown,
     ChevronRight,
@@ -345,13 +344,13 @@ export default function Header() {
 }
 
 /* ✅ Tailwind helper classes for links */
-const linkClasses =
-    "block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600";
+// const linkClasses =
+    // "block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600";
 
-function DropdownLink({ href, children }: { href: string; children: React.ReactNode }) {
-    return (
-        <Link href={href} className={linkClasses}>
-            {children}
-        </Link>
-    );
-}
+// function DropdownLink({ href, children }: { href: string; children: React.ReactNode }) {
+//     return (
+//         <Link href={href} className={linkClasses}>
+//             {children}
+//         </Link>
+//     );
+// }

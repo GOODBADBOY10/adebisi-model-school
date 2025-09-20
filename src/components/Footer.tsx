@@ -93,5 +93,5 @@ export default function Footer() {
 }
 
 /* ✅ Tailwind helper classes */
-const linkStyles =
-    "hover:text-white transition-colors";
+// const linkStyles =
+//     "hover:text-white transition-colors";
