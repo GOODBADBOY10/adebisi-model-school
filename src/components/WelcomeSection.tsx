@@ -39,7 +39,7 @@ export default function WelcomeSection() {
                             alt="Welcome to our school"
                             width={1920}
                             height={1080}
-                            className="rounded-xl shadow-2xl w-full h-[80vh] object-cover border-4 border-blue-200"
+                            className="rounded-xl shadow-2xl w-full h-[83vh] object-cover border-4 border-blue-200"
                         />
                     </div>
 
