@@ -2,6 +2,8 @@
 
 import MissionVision from "@/components/MissionVision";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import WelcomeSection from "@/components/WelcomeSection";
 
 const slides = [
   {
@@ -115,43 +117,12 @@ export default function HomePage() {
 
       {/* ================= CONTENT SECTIONS ================= */}
       <div className="bg-white">
+
         {/* Section 1: Welcome */}
-        <section className="py-16 bg-gray-50 text-center">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              Welcome to Our School
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              We are delighted to welcome you to ADEBISI MODEL SCHOOLS.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Quality Education</h3>
-                <p className="text-gray-600">We believe in fostering a community where every student can thrive.
-                  Our commitment is to provide a nurturing and challenging environment that inspires a lifelong love of learning.
-                  We focus on  academic excellence, moral values, and critical thinking, preparing our students not just
-                  for the next grade, but for a successful future.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Community Focus</h3>
-                <p className="text-gray-600">We see education as a partnership, with students, parents, and teachers
-                  working together to create a supportive and engaging learning journey.
-                  Our school is more than just a place of learning; it's a close-knit community where every member is valued.
-                  We encourage you to get involved and join us in shaping a bright future for our students.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Excellence</h3>
-                <p className="text-gray-600">Placeholder text here.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <WelcomeSection />
 
         {/* Section 2: Mission */}
         <MissionVision />
-
 
         {/* Section 3: Academic Programs */}
         <section className="py-16 bg-blue-50 text-center">
