@@ -8,6 +8,7 @@ import {
     ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,16 +36,19 @@ export default function Header() {
                 <div className="flex items-center justify-between py-4">
                     {/* Logo */}
                     <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                            <GraduationCap className="text-white w-6 h-6" />
+                        <div className="w-10 h-10 relative">
+                            <Image
+                                src="/logo.jpg"
+                                alt="School logo"
+                                fill
+                                className="rounded-full object-cover shadow-md"
+                            />
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-800">
                                 ADEBISI MODEL SCHOOL
                             </h1>
-                            <p className="text-xs text-gray-600">
-                                Learning and Piety
-                            </p>
+                            <p className="text-xs text-gray-600">Learning and Piety</p>
                         </div>
                     </div>
 
