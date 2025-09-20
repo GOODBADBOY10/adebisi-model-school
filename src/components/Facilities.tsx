@@ -11,13 +11,13 @@ const facilities = [
     },
     {
         title: "Sports Complex",
-        image: "/GOODBADBOY.jpg",
+        image: "/GOODBADBOY1.jpg",
         desc: "Modern sports facilities supporting physical fitness and teamwork.",
         color: "from-green-400 to-green-600",
     },
     {
         title: "Library",
-        image: "/GOODBADBOY.jpg",
+        image: "/GOODBADBOY2.jpg",
         desc: "A vast library collection offering knowledge and quiet study spaces.",
         color: "from-purple-400 to-purple-600",
     },
