@@ -189,12 +189,6 @@ export default function Header() {
                             Events
                         </Link>
                         <Link
-                            href="/eld"
-                            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                        >
-                            ELD
-                        </Link>
-                        <Link
                             href="/contact"
                             className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                         >
@@ -204,31 +198,6 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Navigation */}
-                {/* {mobileOpen && (
-                    <div className="lg:hidden pb-4">
-                        <div className="space-y-2">
-                            <Link href="/" className="mobile-link">
-                                Home
-                            </Link>
-                            <Link href="/about" className="mobile-link">
-                                About Us
-                            </Link>
-                            <Link href="/learning-journey" className="mobile-link">
-                                Learning Journey
-                            </Link>
-                            <Link href="/events" className="mobile-link">
-                                Events
-                            </Link>
-                            <Link href="/eld" className="mobile-link">
-                                ELD
-                            </Link>
-                            <Link href="/contact" className="mobile-link">
-                                Contact Us
-                            </Link>
-                        </div>
-                    </div>
-                )} */}
-
                 {mobileOpen && (
                     <div className="lg:hidden pb-4">
                         <div className="space-y-2">
@@ -328,9 +297,6 @@ export default function Header() {
                             <Link href="/events" className="mobile-link" onClick={closeAll}>
                                 Events
                             </Link>
-                            <Link href="/eld" className="mobile-link" onClick={closeAll}>
-                                ELD
-                            </Link>
                             <Link href="/contact" className="mobile-link" onClick={closeAll}>
                                 Contact Us
                             </Link>
@@ -342,15 +308,3 @@ export default function Header() {
         </header>
     );
 }
-
-/* ✅ Tailwind helper classes for links */
-// const linkClasses =
-    // "block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600";
-
-// function DropdownLink({ href, children }: { href: string; children: React.ReactNode }) {
-//     return (
-//         <Link href={href} className={linkClasses}>
-//             {children}
-//         </Link>
-//     );
-// }

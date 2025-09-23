@@ -45,7 +45,7 @@ export default function Footer() {
                             <li><Link href="#" className="footer-link">Sports Teams</Link></li>
                             <li><Link href="#" className="footer-link">Events</Link></li>
                             <li><Link href="#" className="footer-link">Student Support</Link></li>
-                            <li><Link href="#" className="footer-link">Alumni</Link></li>
+                            <li><Link href="/photo-gallery" className="footer-link">Alumni</Link></li>
                         </ul>
                     </div>
 
@@ -91,7 +91,3 @@ export default function Footer() {
         </footer>
     );
 }
-
-/* ✅ Tailwind helper classes */
-// const linkStyles =
-//     "hover:text-white transition-colors";

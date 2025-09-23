@@ -6,6 +6,7 @@ import Image from "next/image";
 import WelcomeSection from "@/components/WelcomeSection";
 import Facilities from "@/components/Facilities";
 import StudentLifeSection from "@/components/StudentLifeSection";
+import AcademicPrograms from "@/components/AcademicPrograms";
 
 const slides = [
   {
@@ -127,34 +128,7 @@ export default function HomePage() {
         <MissionVision />
 
         {/* Section 3: Academic Programs */}
-        <section className="py-16 bg-blue-50 text-center">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              Academic Programs
-            </h2>
-            <p className="text-lg text-gray-600 mb-12">
-              Placeholder description for academic programs.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Early Years</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Primary</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Middle School</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Senior School</h3>
-                <p className="text-gray-600">Placeholder text.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AcademicPrograms />
 
         {/* Section 4: Facilities */}
         <Facilities />
