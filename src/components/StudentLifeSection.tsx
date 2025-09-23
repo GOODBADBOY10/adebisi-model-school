@@ -118,7 +118,7 @@ export default function StudentLifeSection() {
                                 </div>
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     &quot;When I first joined the debate team, I was terrified of speaking in public.
-                                    Now I'm the team captain and we just won the state championship! The teachers
+                                    Now I&apos;m the team captain and we just won the state championship! The teachers
                                     here don&apos;t just teach you facts—they help you discover who you really are.&quot;
                                 </p>
                                 <div className="bg-blue-50 p-3 rounded-lg">
