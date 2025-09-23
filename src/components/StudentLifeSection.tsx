@@ -119,7 +119,7 @@ export default function StudentLifeSection() {
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     &quot;When I first joined the debate team, I was terrified of speaking in public.
                                     Now I'm the team captain and we just won the state championship! The teachers
-                                    here don't just teach you facts—they help you discover who you really are.&quot;
+                                    here don&apos;t just teach you facts—they help you discover who you really are.&quot;
                                 </p>
                                 <div className="bg-blue-50 p-3 rounded-lg">
                                     <p className="text-sm text-blue-700 font-medium">
@@ -148,7 +148,7 @@ export default function StudentLifeSection() {
                                     <span className="text-yellow-400 text-2xl">★★★★★</span>
                                 </div>
                                 <p className="text-gray-700 leading-relaxed mb-4">
-                                    &quot;The cultural diversity here is amazing! I've learned traditional dances from
+                                    &quot;The cultural diversity here is amazing! I&apos;ve learned traditional dances from
                                     different Nigerian cultures and even taught my classmates about my Igbo heritage.
                                     Our annual Cultural Day is the highlight of my year—it makes me so proud to be Nigerian.&quot;
                                 </p>
@@ -180,7 +180,7 @@ export default function StudentLifeSection() {
                                 </div>
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     &quot;The science lab here is like a second home to me! Our robotics project won
-                                    the regional competition, and now I'm building a water purification system for
+                                    the regional competition, and now I&apos;m building a water purification system for
                                     my final year project. I definitely want to study engineering at university.&quot;
                                 </p>
                                 <div className="bg-purple-50 p-3 rounded-lg">
@@ -212,7 +212,7 @@ export default function StudentLifeSection() {
                                 <p className="text-gray-700 leading-relaxed mb-4">
                                     &ldquo;Football taught me discipline, but being team captain taught me leadership.
                                     When we lost the semi-finals last year, Coach helped us see it as a learning
-                                    opportunity. This year, we're stronger and more united than ever&ldquo;
+                                    opportunity. This year, we&apos;re stronger and more united than ever&ldquo;
                                 </p>
                                 <div className="bg-red-50 p-3 rounded-lg">
                                     <p className="text-sm text-red-700 font-medium">
