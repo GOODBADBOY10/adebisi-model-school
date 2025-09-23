@@ -24,7 +24,7 @@ export default function StudentLifeSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                     <div className="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
                         <Image
-                            src="/GOODBADBOY.jpg"
+                            src="/adebisi4.jpg"
                             alt="Sports"
                             width={500}
                             height={300}
