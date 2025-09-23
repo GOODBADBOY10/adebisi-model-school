@@ -29,17 +29,26 @@ export default function WelcomeSection() {
         // <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-gray-50"> real
         // <section className="py-16 bg-gradient-to-br from-blue-100 via-amber-50 to-white">
         // {/* <section className="py-16 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-50"> */}
-        <section className="py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white overflow-x-hidden">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Column: Image */}
-                    <div className="relative">
+                    {/* <div className="relative">
                         <Image
                             src="/GOODBADBOY.jpg"
                             alt="Welcome to our school"
                             width={1920}
                             height={1080}
                             className="rounded-xl shadow-2xl w-full h-[83vh] object-cover border-4 border-blue-200"
+                        />
+                    </div> */}
+                    <div className="relative w-full max-w-full overflow-hidden">
+                        <Image
+                            src="/GOODBADBOY.jpg"
+                            alt="Welcome to our school"
+                            width={1920}
+                            height={1080}
+                            className="block w-full h-auto max-w-full rounded-xl shadow-2xl object-cover border-4 border-blue-200"
                         />
                     </div>
 

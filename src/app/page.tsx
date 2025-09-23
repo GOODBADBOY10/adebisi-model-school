@@ -122,7 +122,7 @@ export default function HomePage() {
       <div className="bg-white">
 
         {/* Section 1: Welcome */}
-        <WelcomeSection />
+        {/* <WelcomeSection /> */}
 
         {/* Section 2: Mission */}
         <MissionVision />

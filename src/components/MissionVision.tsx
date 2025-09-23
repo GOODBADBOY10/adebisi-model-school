@@ -6,7 +6,7 @@ import { CheckCircle, Globe, GraduationCap, Users, Lightbulb } from "lucide-reac
 export default function MissionVision() {
     return (
         // <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50"> real
-        <section id="mission" className="py-16 bg-gradient-to-br from-blue-200 via-indigo-100 to-cyan-100">
+        <section id="mission" className="py-16 bg-gradient-to-br from-blue-200 via-indigo-100 to-cyan-100 overflow-x-hidden">
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
                     Our Mission & Vision
