@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import WelcomeSection from "@/components/WelcomeSection";
 import Facilities from "@/components/Facilities";
+import StudentLifeSection from "@/components/StudentLifeSection";
 
 const slides = [
   {
@@ -159,16 +160,8 @@ export default function HomePage() {
         <Facilities />
 
         {/* Section 5: Student Life */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
-              Vibrant Student Life
-            </h2>
-            <p className="text-lg text-gray-600">
-              Placeholder description for student life.
-            </p>
-          </div>
-        </section>
+        <StudentLifeSection />
+
       </div>
     </main>
   );
