@@ -189,13 +189,13 @@ export default function AcademicPrograms() {
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">WAEC Success Rate</h4>
                             <p className="text-gray-600 text-sm">
                                 Our students consistently achieve outstanding results in external examinations,
-                                with 98% pass rate in WAEC over the last 5 years.
+                                with 98% pass rate in WAEC over the last 3 years.
                             </p>
                         </div>
 
                         <div className="text-center">
                             <div className="bg-gradient-to-r from-green-500 to-teal-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-white text-2xl font-bold">15:1</span>
+                                <span className="text-white text-2xl font-bold">20:1</span>
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Student-Teacher Ratio</h4>
                             <p className="text-gray-600 text-sm">

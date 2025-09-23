@@ -7,6 +7,7 @@ import WelcomeSection from "@/components/WelcomeSection";
 import Facilities from "@/components/Facilities";
 import StudentLifeSection from "@/components/StudentLifeSection";
 import AcademicPrograms from "@/components/AcademicPrograms";
+import HeroSlider from "@/components/HeroSlider";
 
 const slides = [
   {
@@ -72,57 +73,13 @@ export default function HomePage() {
   return (
     <main className="pt-20">
       {/* ================= HERO SLIDER ================= */}
-      <section id="home" className="relative h-screen overflow-hidden">
-        <div className="slider-container h-full relative">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`slider-image absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === active ? "opacity-100 z-10" : "opacity-0 z-0"
-                }`}
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="hero-overlay absolute inset-0 bg-black/40"></div>
-              <div className="relative h-full flex items-center justify-center">
-                <div className="text-center text-white px-4">
-                  <h2 className="text-5xl md:text-7xl font-bold mb-6">
-                    {slide.title}
-                  </h2>
-                  <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                    {slide.desc}
-                  </p>
-                  <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
-                    {slide.button}
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Slider Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActive(index)}
-              className={`slider-dot w-3 h-3 rounded-full transition-all ${index === active
-                ? "bg-white"
-                : "bg-white/50 hover:bg-white/80"
-                }`}
-            ></button>
-          ))}
-        </div>
-      </section>
+      <HeroSlider active={active} setActive={setActive} />
 
       {/* ================= CONTENT SECTIONS ================= */}
       <div className="bg-white">
 
         {/* Section 1: Welcome */}
-        {/* <WelcomeSection /> */}
+        <WelcomeSection />
 
         {/* Section 2: Mission */}
         <MissionVision />

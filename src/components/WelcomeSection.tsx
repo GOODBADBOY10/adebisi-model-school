@@ -27,7 +27,6 @@ export default function WelcomeSection() {
 
     return (
         // <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-gray-50"> real
-        // <section className="py-16 bg-gradient-to-br from-blue-100 via-amber-50 to-white">
         // {/* <section className="py-16 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-50"> */}
         <section className="py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-white overflow-x-hidden">
             <div className="container mx-auto px-4 max-w-6xl">
