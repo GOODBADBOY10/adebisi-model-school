@@ -65,9 +65,9 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-xl font-semibold mb-3 text-gray-800">Phone</h3>
                             <p className="text-gray-700 mb-2">Main Office:</p>
-                            <p className="text-lg font-semibold text-blue-700">+1 (555) 123-4567</p>
+                            <p className="text-lg font-semibold text-blue-700">+234 08105990970</p>
                             <p className="text-gray-700 mb-2 mt-4">Admissions:</p>
-                            <p className="text-lg font-semibold text-blue-700">+1 (555) 123-4568</p>
+                            <p className="text-lg font-semibold text-blue-700">+234 08105990970</p>
                         </motion.div>
 
                         {/* Email */}
@@ -98,9 +98,9 @@ export default function ContactPage() {
                                 <i className="fas fa-map-marker-alt" />
                             </div>
                             <h3 className="text-xl font-semibold mb-3 text-gray-800">Address</h3>
-                            <p className="text-gray-700 mb-2">123 Education Street</p>
-                            <p className="text-gray-700 mb-2">Learning City, LC 12345</p>
-                            <p className="text-gray-700">United States</p>
+                            <p className="text-gray-700 mb-2">YA 105 Sawmill Alfa, Agboworin Road</p>
+                            <p className="text-gray-700 mb-2">Ibala Road, Ilesa</p>
+                            <p className="text-gray-700">Osun State</p>
                         </motion.div>
                     </motion.div>
 
@@ -236,15 +236,15 @@ export default function ContactPage() {
 
                             {/* Office Hours */}
                             <div className="bg-gradient-to-br from-green-50 to-green-100 border rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-500">
-                                <h3 className="text-2xl font-semibold text-green-700 mb-4">Office Hours</h3>
+                                <h3 className="text-2xl font-semibold text-green-700 mb-4">School Hours</h3>
                                 <div className="space-y-3">
                                     <div className="flex justify-between border-b pb-2">
                                         <span className="font-medium text-gray-700">Mon - Fri</span>
-                                        <span className="text-gray-600">8:00 AM - 5:00 PM</span>
+                                        <span className="text-gray-600">6:50 AM - 6:00 PM</span>
                                     </div>
                                     <div className="flex justify-between border-b pb-2">
                                         <span className="font-medium text-gray-700">Saturday</span>
-                                        <span className="text-gray-600">9:00 AM - 2:00 PM</span>
+                                        <span className="text-gray-600">8:00 AM - 5:00 PM</span>
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="font-medium text-gray-700">Sunday</span>
@@ -260,7 +260,7 @@ export default function ContactPage() {
                                     For urgent matters outside office hours:
                                 </p>
                                 <p className="text-lg font-semibold text-red-800">
-                                    <i className="fas fa-phone mr-2" /> +1 (555) 123-4569
+                                    <i className="fas fa-phone mr-2" /> +234 09048411029
                                 </p>
                             </div>
                         </motion.div>
