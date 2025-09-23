@@ -1,4 +1,4 @@
-export default function HeroSlider({active, setActive}: {active: number, setActive: (index: number) => void}) {
+export default function HeroSlider({ active, setActive }: { active: number, setActive: (index: number) => void }) {
 
     const slides = [
         {
@@ -17,23 +17,23 @@ export default function HeroSlider({active, setActive}: {active: number, setActi
         },
         {
             id: 3,
-            title: "Community & Values",
-            desc: "Building character, fostering community, creating lifelong learners",
+            title: "Faith & Community",
+            desc: "Guided by Islamic values, fostering unity, compassion, and spiritual growth",
             button: "Join Us",
             image: "/adebisi3.jpg",
         },
         {
             id: 4,
-            title: "Excellence in Education",
-            desc: "Nurturing minds, building futures, and inspiring greatness in every student",
-            button: "Learn More",
+            title: "Passion for Sports",
+            desc: "Building strength, teamwork, and discipline through the spirit of sports",
+            button: "Explore More",
             image: "/adebisi4.jpg",
         },
         {
             id: 5,
-            title: "Innovation & Growth",
-            desc: "Preparing students for tomorrow's challenges with today's best practices",
-            button: "Discover More",
+            title: "Excursions & Discovery",
+            desc: "Taking learning beyond the classroom through exciting trips, exploration, and real-world experiences",
+            button: "Explore With Us",
             image: "/adebisi17.jpg",
         },
         {
