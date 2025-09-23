@@ -5,25 +5,49 @@ import { motion } from "framer-motion";
 const facilities = [
     {
         title: "Science Labs",
-        image: "/GOODBADBOY.jpg",
+        image: "/adebisilab2.png",
         desc: "State-of-the-art science laboratories for hands-on experiments and discovery.",
         color: "from-blue-400 to-blue-600",
     },
     {
         title: "Sports Complex",
-        image: "/GOODBADBOY1.jpg",
+        image: "/adebisisport.png",
         desc: "Modern sports facilities supporting physical fitness and teamwork.",
         color: "from-green-400 to-green-600",
     },
     {
         title: "Library",
-        image: "/GOODBADBOY2.jpg",
+        image: "/adebisilibary.png",
         desc: "A vast library collection offering knowledge and quiet study spaces.",
         color: "from-purple-400 to-purple-600",
     },
     {
         title: "Computer Pool",
-        image: "/GOODBADBOY.jpg",
+        image: "/adebisilab.png",
+        desc: "High-tech computer pool with fast internet and the latest software tools.",
+        color: "from-yellow-400 to-yellow-600",
+    },
+    {
+        title: "Science Labs",
+        image: "/adebisilab2.png",
+        desc: "State-of-the-art science laboratories for hands-on experiments and discovery.",
+        color: "from-blue-400 to-blue-600",
+    },
+    {
+        title: "Sports Complex",
+        image: "/adebisisport.png",
+        desc: "Modern sports facilities supporting physical fitness and teamwork.",
+        color: "from-green-400 to-green-600",
+    },
+    {
+        title: "Library",
+        image: "/adebisilibary.png",
+        desc: "A vast library collection offering knowledge and quiet study spaces.",
+        color: "from-purple-400 to-purple-600",
+    },
+    {
+        title: "Computer Pool",
+        image: "/adebisilab.png",
         desc: "High-tech computer pool with fast internet and the latest software tools.",
         color: "from-yellow-400 to-yellow-600",
     },

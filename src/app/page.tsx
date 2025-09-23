@@ -40,14 +40,14 @@ const slides = [
     title: "Innovation & Growth",
     desc: "Preparing students for tomorrow's challenges with today's best practices",
     button: "Discover More",
-    image: "/adebisi5.jpg",
+    image: "/adebisi17.jpg",
   },
   {
     id: 6,
     title: "Community & Values",
     desc: "Building character, fostering community, creating lifelong learners",
     button: "Join Us",
-    image: "/adebisi6.jpg",
+    image: "/adebisi42.jpg",
   },
 ];
 
