@@ -109,8 +109,8 @@ export default function StudentLifeSection() {
                                         className="w-16 h-16 object-cover rounded-full mr-4 ring-4 ring-blue-100"
                                     />
                                     <div>
-                                        <h4 className="text-xl font-bold text-gray-800">Chidera Okafor</h4>
-                                        <p className="text-blue-600 font-medium">Grade 9 • Debate Team Captain</p>
+                                        <h4 className="text-xl font-bold text-gray-800">Owoeye Sekinah</h4>
+                                        <p className="text-blue-600 font-medium">SSS 3 • Debate Team Captain</p>
                                     </div>
                                 </div>
                                 <div className="mb-4">
@@ -140,8 +140,8 @@ export default function StudentLifeSection() {
                                         className="w-16 h-16 object-cover rounded-full mr-4 ring-4 ring-green-100"
                                     />
                                     <div>
-                                        <h4 className="text-xl font-bold text-gray-800">Amaka Nwankwo</h4>
-                                        <p className="text-green-600 font-medium">Grade 7 • Cultural Ambassador</p>
+                                        <h4 className="text-xl font-bold text-gray-800">Olawale Aminah</h4>
+                                        <p className="text-green-600 font-medium">JSS 2 • Cultural Ambassador</p>
                                     </div>
                                 </div>
                                 <div className="mb-4">
@@ -171,8 +171,8 @@ export default function StudentLifeSection() {
                                         className="w-16 h-16 object-cover rounded-full mr-4 ring-4 ring-purple-100"
                                     />
                                     <div>
-                                        <h4 className="text-xl font-bold text-gray-800">Bola Adeyemi</h4>
-                                        <p className="text-purple-600 font-medium">Grade 10 • Future Engineer</p>
+                                        <h4 className="text-xl font-bold text-gray-800">Robiu Ridwan</h4>
+                                        <p className="text-purple-600 font-medium">SSS 3 • Future Engineer</p>
                                     </div>
                                 </div>
                                 <div className="mb-4">
@@ -202,8 +202,8 @@ export default function StudentLifeSection() {
                                         className="w-16 h-16 object-cover rounded-full mr-4 ring-4 ring-red-100"
                                     />
                                     <div>
-                                        <h4 className="text-xl font-bold text-gray-800">David Ogundimu</h4>
-                                        <p className="text-red-600 font-medium">Grade 8 • Football Team Captain</p>
+                                        <h4 className="text-xl font-bold text-gray-800">Gabriel Sunday</h4>
+                                        <p className="text-red-600 font-medium">SSS 2 • Football Team Captain</p>
                                     </div>
                                 </div>
                                 <div className="mb-4">
