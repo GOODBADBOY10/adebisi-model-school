@@ -199,7 +199,7 @@ export default function AcademicPrograms() {
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Student-Teacher Ratio</h4>
                             <p className="text-gray-600 text-sm">
-                                Small class sizes ensure personalized attention and support for every student's
+                                Small class sizes ensure personalized attention and support for every student&apos;s
                                 unique learning needs and potential.
                             </p>
                         </div>

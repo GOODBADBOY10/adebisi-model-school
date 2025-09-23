@@ -70,7 +70,7 @@ export default function HomePage() {
 
 
   return (
-    <main className="pt-20">
+    <main className="pt-20 w-full">
       {/* ================= HERO SLIDER ================= */}
       <section id="home" className="relative h-screen overflow-hidden">
         <div className="slider-container h-full relative">
