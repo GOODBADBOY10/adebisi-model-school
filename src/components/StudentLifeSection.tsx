@@ -41,7 +41,7 @@ export default function StudentLifeSection() {
 
                     <div className="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
                         <Image
-                            src="/GOODBADBOY.jpg"
+                            src="/adebisi26.jpg"
                             alt="Arts"
                             width={500}
                             height={300}
