@@ -189,6 +189,12 @@ export default function Header() {
                             Events
                         </Link>
                         <Link
+                            href="/login"
+                            className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                        >
+                            Login
+                        </Link>
+                        <Link
                             href="/contact"
                             className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                         >
@@ -296,6 +302,13 @@ export default function Header() {
                             </Link>
                             <Link href="/events" className="mobile-link" onClick={closeAll}>
                                 Events
+                            </Link>
+                            <Link
+                                href="/login"
+                                onClick={closeAll}
+                                className="mobile-link"
+                            >
+                                Login
                             </Link>
                             <Link href="/contact" className="mobile-link" onClick={closeAll}>
                                 Contact Us
