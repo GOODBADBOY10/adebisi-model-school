@@ -14,14 +14,23 @@ export async function POST(req: Request) {
         }
 
         // Firestore query
-        const snapshot = await db
-            .collection("students")
-            .where("email", "==", email.trim().toLowerCase())
-            .where("firstName", "==", firstName.trim())
-            .where("year", "==", year)
-            .where("class", "==", studentClass)
-            .limit(1)
-            .get();
+        let snapshot;
+        try {
+            snapshot = await db
+                .collection("students")
+                .where("email", "==", email.trim().toLowerCase())
+                .where("firstName", "==", firstName.trim())
+                .where("year", "==", year)
+                .where("class", "==", studentClass)
+                .limit(1)
+                .get();
+        } catch (firestoreError) {
+            console.error("❌ Firestore query failed:", firestoreError);
+            return NextResponse.json(
+                { error: "Database error" },
+                { status: 500 }
+            );
+        }
 
         if (snapshot.empty) {
             return NextResponse.json(
