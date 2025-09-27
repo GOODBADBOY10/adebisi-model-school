@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, User, CreditCard, BookOpen, FileText, LogOut, ChevronDown, ChevronRight, Download } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 // TypeScript interfaces
 interface Result {
@@ -67,7 +68,7 @@ const studentData: StudentData = {
     }
 };
 
-export default function StudentDashboard():  React.ReactNode {
+export default function StudentDashboard(): React.ReactNode {
     const [activeSection, setActiveSection] = useState<ActiveSection>('dashboard');
     const [selectedTerm, setSelectedTerm] = useState<TermKey | null>(null);
     const [showResults, setShowResults] = useState<boolean>(false);
@@ -84,6 +85,16 @@ export default function StudentDashboard():  React.ReactNode {
         firstTerm: 'First Term',
         secondTerm: 'Second Term',
         thirdTerm: 'Third Term'
+    };
+
+    const router = useRouter();
+
+    const handleLogout = () => {
+        // localStorage.removeItem("student");
+        // localStorage.removeItem("admin");
+        localStorage.removeItem("student"); // clear student data
+        // router.push("/login"); // redirect back to login
+        router.push("/"); // redirect back to login
     };
 
     const handleMenuClick = (sectionId: string): void => {
@@ -127,8 +138,15 @@ export default function StudentDashboard():  React.ReactNode {
         return colors[grade] || 'text-gray-500';
     };
 
+    useEffect(() => {
+        const student = localStorage.getItem("student");
+        if (!student) {
+            router.push("/login");
+        }
+    }, []);
+
     // const renderContent = (): JSX.Element => {
-    const renderContent = ():  React.ReactNode => {
+    const renderContent = (): React.ReactNode => {
         switch (activeSection) {
             case 'dashboard':
                 return (
@@ -400,9 +418,11 @@ export default function StudentDashboard():  React.ReactNode {
 
                     {/* Logout */}
                     <div className="p-4 border-t">
-                        <button className="w-full flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                        <button
+                            onClick={handleLogout}
+                            className="w-full flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
                             <LogOut size={20} />
-                            <span className="font-medium">Logout</span>
+                            <span className="font-medium cursor-pointer">Logout</span>
                         </button>
                     </div>
                 </div>
