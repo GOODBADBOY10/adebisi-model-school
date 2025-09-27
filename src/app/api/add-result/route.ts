@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import admin from "firebase-admin";
 import { db } from "@/lib/firebaseAdmin";
 
@@ -21,16 +21,14 @@ interface RequestBody {
     adminId: string;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
-
-    const { results, adminId } = req.body as RequestBody;
-
-    if (!results || results.length === 0) {
-        return res.status(400).json({ error: "No results to upload" });
-    }
-
+export async function POST(req: Request) {
     try {
+        const { results, adminId } = (await req.json()) as RequestBody;
+
+        if (!results || results.length === 0) {
+            return NextResponse.json({ error: "No results to upload" }, { status: 400 });
+        }
+
         for (const r of results) {
             const studentRef = db.collection("students").doc(r.studentId);
             const studentDoc = await studentRef.get();
@@ -60,9 +58,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             });
         }
 
-        res.status(200).json({ message: "Results and students uploaded successfully" });
-    } catch (err) {
+        return NextResponse.json({ message: "Results and students uploaded successfully" });
+    } catch (err: any) {
         console.error(err);
-        res.status(500).json({ error: "Failed to upload results" });
+        return NextResponse.json({ error: "Failed to upload results" }, { status: 500 });
     }
 }
