@@ -9,10 +9,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <header className="bg-blue-600 text-white p-4">
-        <h1 className="text-xl font-bold">Admin Panel</h1>
-      </header>
+    <div className="min-h-screen">
       <main className="p-6">{children}</main>
     </div>
     // // <html lang="en">
