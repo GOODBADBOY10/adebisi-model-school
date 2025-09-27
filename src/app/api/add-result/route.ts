@@ -59,8 +59,17 @@ export async function POST(req: Request) {
         }
 
         return NextResponse.json({ message: "Results and students uploaded successfully" });
-    } catch (err: any) {
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            console.error(err.message);
+            return NextResponse.json({ error: err.message }, { status: 500 });
+        }
         console.error(err);
         return NextResponse.json({ error: "Failed to upload results" }, { status: 500 });
     }
 }
+
+// } catch (err) {
+//   console.error(err);
+//   return NextResponse.json({ error: "Failed to upload results" }, { status: 500 });
+// }
