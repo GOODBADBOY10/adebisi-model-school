@@ -91,7 +91,7 @@ export default function StudentLifeSection() {
                             delay: 0,
                             disableOnInteraction: false,
                         }}
-                        speed={5000}
+                        speed={2000}
                         breakpoints={{
                             640: { slidesPerView: 1, spaceBetween: 20 },
                             1024: { slidesPerView: 2, spaceBetween: 30 },
