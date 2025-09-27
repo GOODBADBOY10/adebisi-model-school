@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const [isAdmin, setIsAdmin] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         email: "",
         password: "", // only for admin
@@ -30,7 +31,9 @@ export default function LoginPage() {
     };
 
     const handleSubmit = async () => {
+        if (loading) return; // prevent double-click
         setError(null);
+        setLoading(true);
         try {
             const endpoint = isAdmin ? "/api/admin/login" : "/api/login";
 
@@ -55,6 +58,8 @@ export default function LoginPage() {
             }
         } catch (err) {
             setError("Something went wrong. Try again.");
+        } finally {
+            setLoading(false); // stop loading
         }
     };
 
@@ -154,9 +159,12 @@ export default function LoginPage() {
                 {/* Submit */}
                 <button
                     onClick={handleSubmit}
-                    className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+                    disabled={loading}
+                    className={`w-full py-2 rounded-md text-white transition
+                    ${loading ? "bg-blue-400 cursor-not-allowed opacity-70" : "bg-blue-600 hover:bg-blue-700 cursor-pointer"}
+                    `}
                 >
-                    Login
+                    {loading ? "Logging in..." : "Login"}
                 </button>
 
                 {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
