@@ -19,7 +19,8 @@ export async function POST(req: Request) {
             snapshot = await db
                 .collection("students")
                 .where("email", "==", email.trim().toLowerCase())
-                .where("firstName", "==", firstName.trim())
+                // .where("firstName", "==", firstName.trim())
+                .where("name", "==", firstName.trim())
                 .where("year", "==", year)
                 .where("class", "==", studentClass)
                 .limit(1)
