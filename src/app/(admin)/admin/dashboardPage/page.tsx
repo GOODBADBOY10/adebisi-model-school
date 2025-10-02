@@ -3,13 +3,12 @@ import { Users, TrendingUp, GraduationCap, BarChart3, TrendingDown, Upload, Plus
 
 const typedRecentResults: Result[] = recentResults;
 
+
 interface DashboardPagesProps {
-  handleMenuClick: (menu: string) => void;
+handleMenuClick: (menu: string) => void;
 }
 
-export default function DashboardPages(
-    { handleMenuClick }: DashboardPagesProps) 
-    {
+export default function DashboardPages({ handleMenuClick }: DashboardPagesProps) {
     const getGradeColor = (grade: string): string => {
         const colors: Record<string, string> = {
             'A+': 'text-green-600',
