@@ -8,13 +8,13 @@ import {
     LogOut, ChevronDown, Search, Plus, Eye, Edit, Trash2,
     TrendingUp, TrendingDown, Download
 } from 'lucide-react';
-import TeachersPage from '../teachersPage/page';
-import ReportsPage from '../reportsPage/page';
-import SettingsPage from '../settingsPage/page';
-import AnalyticsPage from '../analyticsPage/page';
-import StudentsPage from '../studentsPage/page';
+import TeachersPage from '../teachersPage/TeachersPage';
+import ReportsPage from '../reportsPage/ReportsPage';
+import SettingsPage from '../settingsPage/SettingsPage';
+import AnalyticsPage from '../analyticsPage/AnalyticsPage';
+import StudentsPage from '../studentsPage/StudentsPage';
 import { ActiveSection, analyticsData, MenuItem, recentResults, sampleStudents } from '@/lib/utils/dummyData';
-import UploadResult from '../uploadResult/page';
+import UploadResult from '../uploadResult/UploadResult';
 import DashboardPages from '../dashboardPage/DashboardPages';
 
 export default function AdminDashboard(): React.ReactNode {
