@@ -15,7 +15,7 @@ import AnalyticsPage from '../analyticsPage/page';
 import StudentsPage from '../studentsPage/page';
 import { ActiveSection, analyticsData, MenuItem, recentResults, sampleStudents } from '@/lib/utils/dummyData';
 import UploadResult from '../uploadResult/page';
-import DashboardPages from '../dashboardPage/page';
+import DashboardPages from '../dashboardPage/DashboardPages';
 
 export default function AdminDashboard(): React.ReactNode {
     const [activeSection, setActiveSection] = useState<ActiveSection>('dashboard');
