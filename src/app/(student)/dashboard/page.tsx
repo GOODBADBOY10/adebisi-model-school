@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, User, CreditCard, BookOpen, FileText, LogOut, ChevronDown, ChevronRight, Download } from 'lucide-react';
 import { useRouter } from "next/navigation";
+import StudentRegistrationPage from './student-registration/StudentRegistrationPage';
+import StudentPaymentPage from './studentPaymentPage/StudentPaymentPage';
 
 // TypeScript interfaces
 interface Result {
@@ -203,62 +205,12 @@ export default function StudentDashboard(): React.ReactNode {
 
             case 'payment':
                 return (
-                    <div className="space-y-6">
-                        <h1 className="text-3xl font-bold text-gray-900">Payment of School Fees</h1>
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-lg font-semibold text-gray-700 mb-4">Fee Structure - 2024/2025 Session</h3>
-                            <div className="space-y-4">
-                                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                                    <span>Tuition Fee</span>
-                                    <span className="font-semibold">$2,500.00</span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                                    <span>Development Levy</span>
-                                    <span className="font-semibold">$300.00</span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-                                    <span>Library Fee</span>
-                                    <span className="font-semibold">$50.00</span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-green-100 rounded border-t-2 border-green-500">
-                                    <span className="font-bold">Total Amount</span>
-                                    <span className="font-bold text-green-600">$2,850.00</span>
-                                </div>
-                                <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                                    Proceed to Payment
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <StudentPaymentPage />
                 );
 
             case 'registration':
                 return (
-                    <div className="space-y-6">
-                        <h1 className="text-3xl font-bold text-gray-900">Course Registration</h1>
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-lg font-semibold text-gray-700 mb-4">Available Courses - Second Semester</h3>
-                            <div className="space-y-3">
-                                {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English Language'].map((course: string, index: number) => (
-                                    <div key={index} className="flex items-center justify-between p-3 border rounded">
-                                        <div>
-                                            <span className="font-medium">{course}</span>
-                                            <span className="ml-2 text-sm text-gray-500">(Core Subject)</span>
-                                        </div>
-                                        <button className="bg-green-600 text-white px-4 py-1 rounded text-sm hover:bg-green-700">
-                                            Registered
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-6 p-4 bg-blue-50 rounded">
-                                <p className="text-blue-800 text-sm">
-                                    <strong>Note:</strong> All courses for this semester have been successfully registered.
-                                    If you need to make changes, please contact the academic office.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <StudentRegistrationPage />
                 );
 
             case 'results':
