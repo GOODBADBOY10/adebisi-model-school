@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Adebisi Model School",
   description: "Adebisi Model School Website",
+  icons: {
+    icon: '/logo.jpg', // <-- your custom icon
+  },
 };
 
 export default function RootLayout({
