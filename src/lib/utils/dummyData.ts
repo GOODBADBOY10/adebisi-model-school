@@ -8,6 +8,18 @@ export interface Student {
     status: 'active' | 'inactive';
 }
 
+// Raw API result
+export interface RawResult {
+    studentId: string;
+    studentName: string;
+    subject: string;
+    score: number;
+    grade: string;
+    term: 'firstTerm' | 'secondTerm' | 'thirdTerm';
+    session: string;
+}
+
+// Simplified result for grouped display
 export interface Result {
     studentId: string;
     studentName: string;
@@ -17,6 +29,14 @@ export interface Result {
     term: 'firstTerm' | 'secondTerm' | 'thirdTerm';
     session: string;
 }
+
+// Grouped by term
+export interface Results {
+    firstTerm: Result[];
+    secondTerm: Result[];
+    thirdTerm: Result[];
+}
+
 
 export interface AnalyticsData {
     totalStudents: number;
@@ -61,9 +81,25 @@ export const recentResults: Result[] = [
 
 
 export interface RecentResult {
-  studentName: string;
-  subject: string;
-  term: string;
-  score: number;
-  grade: string;
+    studentName: string;
+    subject: string;
+    term: string;
+    score: number;
+    grade: string;
+}
+
+export interface StudentData {
+    name: string;
+    email: string;
+    studentId: string;
+    class: string;
+    department: string;
+    results: Results;
+}
+
+export interface MenuItem {
+    id: string;
+    label: string;
+    icon: React.ComponentType<{ size: number }>;
+    hasSubmenu?: boolean;
 }

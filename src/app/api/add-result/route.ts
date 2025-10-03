@@ -3,11 +3,12 @@ import admin from "firebase-admin";
 import { db } from "@/lib/firebaseAdmin";
 
 interface ResultRow {
-    studentId: string;
+    studentId?: string;  // optional now
     email: string;
     firstName: string;
     lastName: string;
     className: string;
+    year: string;
     subject: string;
     firstTest: number;
     exam: number;
@@ -21,6 +22,12 @@ interface RequestBody {
     adminId: string;
 }
 
+// Helper to generate a unique studentId
+function generateStudentId(className: string, year: string): string {
+    const randomNum = Math.floor(1000 + Math.random() * 9000); // 4-digit random number
+    return `${className}-${year}-${randomNum}`; // e.g., SS2-2025-4821
+}
+
 export async function POST(req: Request) {
     try {
         const { results, adminId } = (await req.json()) as RequestBody;
@@ -30,16 +37,19 @@ export async function POST(req: Request) {
         }
 
         for (const r of results) {
-            const studentRef = db.collection("students").doc(r.studentId);
+            // Generate studentId if missing
+            const studentId = r.studentId || generateStudentId(r.className, r.year);
+
+            const studentRef = db.collection("students").doc(studentId);
             const studentDoc = await studentRef.get();
 
-            // Create student if it doesn't exist
             if (!studentDoc.exists) {
                 await studentRef.set({
                     email: r.email,
                     firstName: r.firstName,
                     lastName: r.lastName,
                     class: r.className,
+                    year: r.year,
                     createdBy: adminId,
                     createdAt: admin.firestore.FieldValue.serverTimestamp(),
                 });
@@ -58,7 +68,7 @@ export async function POST(req: Request) {
             });
         }
 
-        return NextResponse.json({ message: "Results and students uploaded successfully" });
+        return NextResponse.json({ message: "Results uploaded successfully" });
     } catch (err: unknown) {
         if (err instanceof Error) {
             console.error(err.message);
@@ -68,8 +78,3 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: "Failed to upload results" }, { status: 500 });
     }
 }
-
-// } catch (err) {
-//   console.error(err);
-//   return NextResponse.json({ error: "Failed to upload results" }, { status: 500 });
-// }

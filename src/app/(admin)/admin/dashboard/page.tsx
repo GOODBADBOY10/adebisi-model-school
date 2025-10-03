@@ -4,9 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import {
     Menu, X, LayoutDashboard, Upload, BarChart3, Users,
-    Settings, FileText, GraduationCap, Calendar,
-    LogOut, ChevronDown, Search, Plus, Eye, Edit, Trash2,
-    TrendingUp, TrendingDown, Download
+    Settings, FileText, GraduationCap, LogOut
 } from 'lucide-react';
 import TeachersPage from '../teachersPage/TeachersPage';
 import ReportsPage from '../reportsPage/ReportsPage';
@@ -84,6 +82,7 @@ export default function AdminDashboard(): React.ReactNode {
 
     const renderContent = (): React.ReactNode => {
         switch (activeSection) {
+
             case 'dashboard':
                 return (
                     <DashboardPages handleMenuClick={handleMenuClick} />

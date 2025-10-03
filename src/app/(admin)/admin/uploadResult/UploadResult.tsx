@@ -11,6 +11,12 @@ interface UploadResultProps {
     setSelectedTerm: React.Dispatch<React.SetStateAction<string>>;
 }
 
+function generateStudentId(className: string, year: string) {
+    const randomNum = Math.floor(1000 + Math.random() * 9000); // 4-digit random number
+    return `${className}-${year}-${randomNum}`;
+}
+
+
 export default function UploadResult({
     selectedTerm,
     setSelectedTerm,
@@ -23,8 +29,8 @@ export default function UploadResult({
         class: "",
         year: "",
         subject: "",
-        term: selectedTerm,
-        session: selectedSession,
+        term: selectedTerm || "firstTerm",
+        session: selectedSession || "2024/2025",
         score: 0,
         grade: "",
     });
@@ -44,17 +50,27 @@ export default function UploadResult({
         setMessage("");
 
         try {
+
+            const studentWithId = {
+                ...student,
+                studentId: generateStudentId(student.class, student.year),
+                term: student.term,   // ✅ include term
+                session: student.session, // ✅ include session
+            };
+
             const res = await fetch("/api/admin/upload-result", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(student),
+                body: JSON.stringify(studentWithId),
             });
 
             const data = await res.json();
             console.log('data', data);
 
             if (res.ok) {
-                setMessage(`✅ Result uploaded for ${data.email}`);
+                // setMessage(`✅ Result uploaded for ${data.email}`);
+                setMessage(`✅ Result uploaded for ${studentWithId.email}`);
+
                 setStudent({
                     name: "",
                     email: "",
@@ -195,9 +211,9 @@ export default function UploadResult({
                                         onChange={handleChange}
                                         className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
                                     >
-                                        <option value="First Term">First Term</option>
-                                        <option value="Second Term">Second Term</option>
-                                        <option value="Third Term">Third Term</option>
+                                        <option value="firstTerm">First Term</option>
+                                        <option value="secondTerm">Second Term</option>
+                                        <option value="thirdTerm">Third Term</option>
                                     </select>
                                 </div>
                                 <div>
