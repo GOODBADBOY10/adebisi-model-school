@@ -11,7 +11,7 @@ import ReportsPage from '../reportsPage/ReportsPage';
 import SettingsPage from '../settingsPage/SettingsPage';
 import AnalyticsPage from '../analyticsPage/AnalyticsPage';
 import StudentsPage from '../studentsPage/StudentsPage';
-import { ActiveSection, analyticsData, MenuItem, recentResults, sampleStudents } from '@/lib/utils/dummyData';
+import { ActiveSection, MenuItem, sampleStudents } from '@/lib/utils/dummyData';
 import UploadResult from '../uploadResult/UploadResult';
 import DashboardPages from '../dashboardPage/DashboardPages';
 
@@ -45,32 +45,6 @@ export default function AdminDashboard(): React.ReactNode {
         // router.push("/login"); // redirect back to login
         router.push("/"); // redirect back to login
     };
-
-    const getStatusColor = (status: string): string => {
-        return status === 'active' ? 'text-green-600 bg-green-100' : 'text-red-600 bg-red-100';
-    };
-
-    const getGradeColor = (grade: string): string => {
-        const colors: Record<string, string> = {
-            'A+': 'text-green-600',
-            'A': 'text-green-500',
-            'A-': 'text-green-400',
-            'B+': 'text-blue-500',
-            'B': 'text-blue-400',
-            'B-': 'text-yellow-500',
-            'C+': 'text-orange-500',
-            'C': 'text-orange-400',
-            'D': 'text-red-400',
-            'F': 'text-red-600'
-        };
-        return colors[grade] || 'text-gray-500';
-    };
-
-    const filteredStudents = sampleStudents.filter(student =>
-        student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.class.toLowerCase().includes(searchTerm.toLowerCase())
-    );
 
     useEffect(() => {
         const admin = localStorage.getItem("admin");

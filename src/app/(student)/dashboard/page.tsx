@@ -37,13 +37,13 @@ export default function StudentDashboard(): React.ReactNode {
     ];
 
     // Add this helper function inside the component file
-  function groupResultsByTerm(rawResults: Result[]): Results {
-    return {
-        firstTerm: rawResults.filter(r => r.term === 'firstTerm'),
-        secondTerm: rawResults.filter(r => r.term === 'secondTerm'),
-        thirdTerm: rawResults.filter(r => r.term === 'thirdTerm'),
-    };
-}
+    function groupResultsByTerm(rawResults: Result[]): Results {
+        return {
+            firstTerm: rawResults.filter(r => r.term === 'firstTerm'),
+            secondTerm: rawResults.filter(r => r.term === 'secondTerm'),
+            thirdTerm: rawResults.filter(r => r.term === 'thirdTerm'),
+        };
+    }
 
 
 
@@ -109,9 +109,10 @@ export default function StudentDashboard(): React.ReactNode {
                 // ✅ Group results by term
                 const groupedResults = groupResultsByTerm(data.results || []);
                 setResults(groupedResults);
-            } catch (err: any) {
-                console.error(err);
-                setError(err.message || "Failed to fetch student data");
+            } catch (err: unknown) {
+                const message = err instanceof Error ? err.message : "Failed to fetch student data";
+                console.error(message);
+                setError(message);
             } finally {
                 setLoading(false);
             }
@@ -232,7 +233,7 @@ export default function StudentDashboard(): React.ReactNode {
                                         showResults &&
                                         activeSection === "results" && (
                                             <div className="ml-6 mt-2 space-y-1">
-                                                {Object.entries(termLabels).map(
+                                                {/* {Object.entries(termLabels).map(
                                                     ([termKey, termLabel]: [string, string]) => (
                                                         <button
                                                             key={termKey}
@@ -250,7 +251,25 @@ export default function StudentDashboard(): React.ReactNode {
                                                             {termLabel}
                                                         </button>
                                                     )
+                                                )} */}
+                                                {(Object.entries(termLabels) as [TermKey, string][]).map(
+                                                    ([termKey, termLabel]) => (
+                                                        <button
+                                                            key={termKey}
+                                                            onClick={() => handleTermClick(termKey)}
+                                                            className={`
+                                                                    w-full text-left px-4 py-2 rounded text-sm transition-colors
+                                                                        ${selectedTerm === termKey
+                                                                    ? "bg-blue-50 text-blue-600 font-medium"
+                                                                    : "text-gray-600 hover:bg-gray-50"
+                                                                }
+                                                            `}
+                                                        >
+                                                            {termLabel}
+                                                        </button>
+                                                    )
                                                 )}
+
                                             </div>
                                         )}
                                 </div>
