@@ -10,8 +10,6 @@ import {
     FaGraduationCap,
     FaClock,
     FaMapMarkerAlt,
-    FaTrophy,
-    FaSeedling,
     FaBell,
     FaCalendarPlus
 } from "react-icons/fa";

@@ -10,22 +10,6 @@ export default function StudentsPage(
         return status === 'active' ? 'text-green-600 bg-green-100' : 'text-red-600 bg-red-100';
     };
 
-    const getGradeColor = (grade: string): string => {
-        const colors: Record<string, string> = {
-            'A+': 'text-green-600',
-            'A': 'text-green-500',
-            'A-': 'text-green-400',
-            'B+': 'text-blue-500',
-            'B': 'text-blue-400',
-            'B-': 'text-yellow-500',
-            'C+': 'text-orange-500',
-            'C': 'text-orange-400',
-            'D': 'text-red-400',
-            'F': 'text-red-600'
-        };
-        return colors[grade] || 'text-gray-500';
-    };
-
     const filteredStudents = sampleStudents.filter(student =>
         student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
