@@ -97,7 +97,6 @@ export default function DashboardPages({ handleMenuClick }: DashboardPagesProps)
                 <div className="bg-white p-6 rounded-lg shadow-md">
                     <h3 className="text-lg font-semibold text-gray-700 mb-4">Recent Result Uploads</h3>
                     <div className="space-y-3">
-                        {/* {recentResults.map((result, index) => ( */}
                         {typedRecentResults.map((result, index) => (
                             <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded">
                                 <div>
@@ -118,21 +117,21 @@ export default function DashboardPages({ handleMenuClick }: DashboardPagesProps)
                     <div className="space-y-3">
                         <button
                             onClick={() => handleMenuClick('upload-results')}
-                            className="w-full flex items-center space-x-3 p-3 bg-blue-50 text-blue-700 rounded hover:bg-blue-100 transition-colors"
+                            className="w-full flex items-center space-x-3 p-3 bg-blue-50 cursor-pointer text-blue-700 rounded hover:bg-blue-100 transition-colors"
                         >
                             <Upload size={20} />
                             <span>Upload New Results</span>
                         </button>
                         <button
                             onClick={() => handleMenuClick('students')}
-                            className="w-full flex items-center space-x-3 p-3 bg-green-50 text-green-700 rounded hover:bg-green-100 transition-colors"
+                            className="w-full flex items-center space-x-3 p-3 cursor-pointer bg-green-50 text-green-700 rounded hover:bg-green-100 transition-colors"
                         >
                             <Plus size={20} />
                             <span>Add New Student</span>
                         </button>
                         <button
                             onClick={() => handleMenuClick('reports')}
-                            className="w-full flex items-center space-x-3 p-3 bg-purple-50 text-purple-700 rounded hover:bg-purple-100 transition-colors"
+                            className="w-full flex items-center space-x-3 p-3 bg-purple-50 cursor-pointer text-purple-700 rounded hover:bg-purple-100 transition-colors"
                         >
                             <FileText size={20} />
                             <span>Generate Reports</span>

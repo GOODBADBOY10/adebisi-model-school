@@ -76,7 +76,7 @@ export default function StudentResultPage({
                     <div className="overflow-x-auto">
                         <table className="w-full table-auto">
                             <thead>
-                                <tr className="bg-gray-100">
+                                <tr className="bg-gray-100 text-black">
                                     <th className="px-4 py-3 text-left font-semibold">Subject</th>
                                     <th className="px-4 py-3 text-center font-semibold">Score</th>
                                     <th className="px-4 py-3 text-center font-semibold">Grade</th>
@@ -85,7 +85,7 @@ export default function StudentResultPage({
                             <tbody>
                                 {selectedTerm && results[selectedTerm]?.length > 0 ? (
                                     results[selectedTerm].map((result: Result, index: number) => (
-                                        <tr key={index} className="border-b hover:bg-gray-50">
+                                        <tr key={index} className="border-b text-black hover:bg-gray-50">
                                             <td className="px-4 py-3">{result.subject}</td>
                                             <td className="px-4 py-3 text-center font-medium">{result.score}</td>
                                             <td

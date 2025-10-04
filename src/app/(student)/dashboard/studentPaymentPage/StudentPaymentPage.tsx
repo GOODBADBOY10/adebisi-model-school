@@ -4,7 +4,7 @@ export default function StudentPaymentPage() {
             <h1 className="text-3xl font-bold text-gray-900">Payment of School Fees</h1>
             <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-lg font-semibold text-gray-700 mb-4">Fee Structure - 2024/2025 Session</h3>
-                <div className="space-y-4">
+                <div className="space-y-4 text-black">
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
                         <span>Tuition Fee</span>
                         <span className="font-semibold">$2,500.00</span>

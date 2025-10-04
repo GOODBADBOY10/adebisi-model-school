@@ -2,7 +2,7 @@ export default function StudentRegistrationPage() {
     return (
         <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">Course Registration</h1>
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-6 rounded-lg shadow-md text-black">
                 <h3 className="text-lg font-semibold text-gray-700 mb-4">Available Courses - Second Semester</h3>
                 <div className="space-y-3">
                     {['Mathematics', 'Physics', 'Chemistry', 'Biology', 'English Language'].map((course: string, index: number) => (

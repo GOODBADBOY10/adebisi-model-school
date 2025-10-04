@@ -146,7 +146,7 @@ export default function AdminDashboard(): React.ReactNode {
                                     key={item.id}
                                     onClick={() => handleMenuClick(item.id)}
                                     className={`
-                    w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors
+                    w-full flex items-center space-x-3 px-4 py-3 cursor-pointer rounded-lg text-left transition-colors
                     ${isActive
                                             ? 'bg-blue-100 text-blue-700 border-l-4 border-blue-500'
                                             : 'text-gray-700 hover:bg-gray-100'
@@ -190,6 +190,7 @@ export default function AdminDashboard(): React.ReactNode {
                     {renderContent()}
                 </div>
             </main>
+            
         </div>
     );
 }

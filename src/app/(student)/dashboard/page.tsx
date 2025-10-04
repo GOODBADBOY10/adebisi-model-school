@@ -45,8 +45,6 @@ export default function StudentDashboard(): React.ReactNode {
         };
     }
 
-
-
     const termLabels: Record<TermKey, string> = {
         firstTerm: "First Term",
         secondTerm: "Second Term",
@@ -72,13 +70,14 @@ export default function StudentDashboard(): React.ReactNode {
         setSidebarOpen(false);
     };
 
+    
+
     const handleTermClick = (term: TermKey): void => {
         setSelectedTerm(term);
         setActiveSection("results");
         setSidebarOpen(false);
     };
 
-    // 🔹 Fetch student data from API
     // 🔹 Fetch student data from API
     useEffect(() => {
         const studentStr = localStorage.getItem("student");
@@ -137,7 +136,7 @@ export default function StudentDashboard(): React.ReactNode {
 
         switch (activeSection) {
             case "dashboard":
-                return <StudentDashboardPage studentData={studentData} />;
+                return <StudentDashboardPage studentData={studentData} handleMenuClick={handleMenuClick} />;
 
             case "payment":
                 return <StudentPaymentPage />;
@@ -149,7 +148,6 @@ export default function StudentDashboard(): React.ReactNode {
                 return (
                     <StudentResultPage
                         results={results}
-                        // results={studentData.results}
                         selectedTerm={selectedTerm}
                         setSelectedTerm={setSelectedTerm}
                     />
@@ -206,7 +204,7 @@ export default function StudentDashboard(): React.ReactNode {
                                     <button
                                         onClick={() => handleMenuClick(item.id)}
                                         className={`
-                      w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors
+                      w-full flex items-center justify-between px-4 cursor-pointer py-3 rounded-lg text-left transition-colors
                       ${isActive
                                                 ? "bg-blue-100 text-blue-700 border-l-4 border-blue-500"
                                                 : "text-gray-700 hover:bg-gray-100"
@@ -233,25 +231,6 @@ export default function StudentDashboard(): React.ReactNode {
                                         showResults &&
                                         activeSection === "results" && (
                                             <div className="ml-6 mt-2 space-y-1">
-                                                {/* {Object.entries(termLabels).map(
-                                                    ([termKey, termLabel]: [string, string]) => (
-                                                        <button
-                                                            key={termKey}
-                                                            onClick={() =>
-                                                                handleTermClick(termKey as TermKey)
-                                                            }
-                                                            className={`
-                            w-full text-left px-4 py-2 rounded text-sm transition-colors
-                            ${selectedTerm === termKey
-                                                                    ? "bg-blue-50 text-blue-600 font-medium"
-                                                                    : "text-gray-600 hover:bg-gray-50"
-                                                                }
-                          `}
-                                                        >
-                                                            {termLabel}
-                                                        </button>
-                                                    )
-                                                )} */}
                                                 {(Object.entries(termLabels) as [TermKey, string][]).map(
                                                     ([termKey, termLabel]) => (
                                                         <button
@@ -287,6 +266,7 @@ export default function StudentDashboard(): React.ReactNode {
                             <span className="font-medium cursor-pointer">Logout</span>
                         </button>
                     </div>
+
                 </div>
             </aside>
 

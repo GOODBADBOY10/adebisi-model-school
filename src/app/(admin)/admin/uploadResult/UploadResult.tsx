@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Upload, Plus, Trash2 } from "lucide-react";
+import { Upload, Plus, Trash2, CheckCircle, AlertCircle } from "lucide-react";
 import Papa from "papaparse";
 
 interface UploadResultProps {
@@ -22,6 +22,7 @@ function generateStudentId(className: string, year: string) {
     const randomNum = Math.floor(1000 + Math.random() * 9000);
     return `${className}-${year}-${randomNum}`;
 }
+
 
 export default function UploadResult({
     selectedTerm,
@@ -44,6 +45,7 @@ export default function UploadResult({
 
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState<"success" | "error" | "warning">("success");
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -51,10 +53,31 @@ export default function UploadResult({
         setStudent({ ...student, [e.target.name]: e.target.value });
     };
 
+    const getGradeFromScore = (score: number): string => {
+        if (score >= 70 && score <= 100) return "A";
+        if (score >= 60) return "B";
+        if (score >= 50) return "C";
+        if (score >= 45) return "D";
+        if (score >= 40) return "E";
+        if (score >= 25) return "F";
+        return ""; // for invalid/empty scores
+    };
+
     const handleSubjectChange = (id: string, field: keyof Subject, value: string | number) => {
-        setSubjects(subjects.map(sub =>
-            sub.id === id ? { ...sub, [field]: value } : sub
-        ));
+        setSubjects(subjects.map(sub => {
+            if (sub.id === id) {
+                if (field === "score") {
+                    const numericScore = Number(value);
+                    return {
+                        ...sub,
+                        score: numericScore,
+                        grade: getGradeFromScore(numericScore), // ✅ auto-update grade
+                    };
+                }
+                return { ...sub, [field]: value };
+            }
+            return sub;
+        }));
     };
 
     const addSubject = () => {
@@ -104,6 +127,7 @@ export default function UploadResult({
             const successCount = responses.filter(res => res.ok).length;
 
             if (successCount === resultsToUpload.length) {
+                setMessageType("success");
                 setMessage(`✅ Successfully uploaded ${successCount} subject(s) for ${student.email}`);
 
                 // Reset form
@@ -117,10 +141,12 @@ export default function UploadResult({
                 });
                 setSubjects([{ id: "1", subject: "", score: 0, grade: "" }]);
             } else {
+                setMessageType("warning");
                 setMessage(`⚠️ Uploaded ${successCount} of ${resultsToUpload.length} subjects. Some failed.`);
             }
         } catch (err) {
             console.error(err);
+            setMessageType("error");
             setMessage("⚠️ An unexpected error occurred");
         }
 
@@ -146,12 +172,15 @@ export default function UploadResult({
 
                     const data = await res.json();
                     if (res.ok) {
+                        setMessageType("success");
                         setMessage(`✅ Uploaded ${data.count} results successfully`);
                     } else {
+                        setMessageType("error");
                         setMessage(`❌ Bulk upload failed: ${data.error}`);
                     }
                 } catch (err) {
                     console.error(err);
+                    setMessageType("error");
                     setMessage("⚠️ Bulk upload failed");
                 }
             },
@@ -162,8 +191,21 @@ export default function UploadResult({
         <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">Upload Student Results</h1>
 
+            {/* Message Alert */}
             {message && (
-                <div className="p-3 bg-gray-100 text-sm text-gray-700 rounded">{message}</div>
+                <div className={`flex items-start gap-3 p-4 rounded-xl border ${messageType === "success"
+                    ? "bg-emerald-50 border-emerald-200 text-emerald-800"
+                    : messageType === "error"
+                        ? "bg-red-50 border-red-200 text-red-800"
+                        : "bg-amber-50 border-amber-200 text-amber-800"
+                    }`}>
+                    {messageType === "success" ? (
+                        <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    ) : (
+                        <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    )}
+                    <p className="text-sm font-medium">{message}</p>
+                </div>
             )}
 
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -186,7 +228,8 @@ export default function UploadResult({
                                     value={student.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Sodiq"
+                                    className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                 />
                             </div>
 
@@ -200,7 +243,8 @@ export default function UploadResult({
                                     value={student.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                    placeholder="student@school.com"
+                                    className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                 />
                             </div>
 
@@ -215,7 +259,8 @@ export default function UploadResult({
                                         value={student.class}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                        placeholder="JSS1"
+                                        className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                     />
                                 </div>
                                 <div>
@@ -228,7 +273,7 @@ export default function UploadResult({
                                         value={student.year}
                                         onChange={handleChange}
                                         required
-                                        className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                        className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                     />
                                 </div>
                             </div>
@@ -242,7 +287,7 @@ export default function UploadResult({
                                         name="term"
                                         value={student.term}
                                         onChange={handleChange}
-                                        className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                        className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                     >
                                         <option value="firstTerm">First Term</option>
                                         <option value="secondTerm">Second Term</option>
@@ -257,7 +302,7 @@ export default function UploadResult({
                                         name="session"
                                         value={student.session}
                                         onChange={handleChange}
-                                        className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                        className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                     >
                                         <option value="2024/2025">2024/2025</option>
                                         <option value="2023/2024">2023/2024</option>
@@ -302,11 +347,11 @@ export default function UploadResult({
 
                                             <input
                                                 type="text"
-                                                placeholder="Subject name"
+                                                placeholder="Mathematics"
                                                 value={sub.subject}
                                                 onChange={(e) => handleSubjectChange(sub.id, 'subject', e.target.value)}
                                                 required
-                                                className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 text-sm"
+                                                className="w-full p-2 outline-none text-black border border-gray-300 rounded text-sm"
                                             />
 
                                             <div className="grid grid-cols-2 gap-2">
@@ -318,15 +363,14 @@ export default function UploadResult({
                                                     max="100"
                                                     onChange={(e) => handleSubjectChange(sub.id, 'score', Number(e.target.value))}
                                                     required
-                                                    className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 text-sm"
+                                                    className="w-full p-2 outline-none text-black border border-gray-300 rounded text-sm"
                                                 />
                                                 <input
                                                     type="text"
                                                     placeholder="Grade"
                                                     value={sub.grade}
-                                                    onChange={(e) => handleSubjectChange(sub.id, 'grade', e.target.value)}
-                                                    required
-                                                    className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 text-sm"
+                                                    readOnly
+                                                    className="w-full p-2 outline-none text-black border border-gray-300 rounded"
                                                 />
                                             </div>
                                         </div>
@@ -335,11 +379,25 @@ export default function UploadResult({
                             </div>
 
                             <button
-                                type="submit"
+                                type="button"
+                                onClick={handleSubmit}
                                 disabled={loading}
-                                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+                                className={`w-full cursor-pointer py-3.5 rounded-xl font-semibold text-white transition-all transform ${loading
+                                    ? "bg-indigo-400 cursor-not-allowed"
+                                    : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg active:scale-95"
+                                    }`}
                             >
-                                {loading ? "Uploading..." : `Upload ${subjects.length} Subject(s)`}
+                                {loading ? (
+                                    <span className="flex items-center justify-center gap-2">
+                                        <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Uploading...
+                                    </span>
+                                ) : (
+                                    `Upload ${subjects.length} Subject${subjects.length > 1 ? 's' : ''}`
+                                )}
                             </button>
                         </form>
                     </div>
@@ -381,6 +439,7 @@ export default function UploadResult({
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
