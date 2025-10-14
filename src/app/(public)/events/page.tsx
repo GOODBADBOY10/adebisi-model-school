@@ -76,7 +76,7 @@ export default function EventsPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
                         <EventCard
-                            date="25"
+                            date="23"
                             month="October 2025"
                             title="Parent-Teacher Conference"
                             description="General meeting between school management, parents and teachers to discuss student progress and development of school."
