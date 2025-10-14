@@ -79,7 +79,7 @@ export default function EventsPage() {
                             date="25"
                             month="October 2025"
                             title="Parent-Teacher Conference"
-                            description="Individual meetings between parents and teachers to discuss student progress and development."
+                            description="General meeting between school management, parents and teachers to discuss student progress and development of school."
                             time="2:30 PM - 4:30 PM"
                             location="SCHOOL HALL"
                             icon={<FaCalendarAlt className="text-3xl text-blue-600" />}
