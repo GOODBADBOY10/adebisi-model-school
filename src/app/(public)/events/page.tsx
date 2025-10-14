@@ -74,19 +74,19 @@ export default function EventsPage() {
                         </motion.p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
                         <EventCard
                             date="25"
-                            month="March 2025"
-                            title="Annual Science Fair"
-                            description="Students showcase their innovative science projects and experiments in this exciting annual competition."
-                            time="9:00 AM - 4:00 PM"
-                            location="Main Auditorium"
+                            month="October 2025"
+                            title="Parent-Teacher Conference"
+                            description="Individual meetings between parents and teachers to discuss student progress and development."
+                            time="2:30 PM - 4:30 PM"
+                            location="SCHOOL HALL"
                             icon={<FaCalendarAlt className="text-3xl text-blue-600" />}
                             color="blue"
                         />
 
-                        <EventCard
+                        {/* <EventCard
                             date="02"
                             month="April 2025"
                             title="Spring Drama Performance"
@@ -95,9 +95,9 @@ export default function EventsPage() {
                             location="School Theater"
                             icon={<FaTheaterMasks className="text-3xl text-green-600" />}
                             color="green"
-                        />
+                        /> */}
 
-                        <EventCard
+                        {/* <EventCard
                             date="15"
                             month="April 2025"
                             title="Inter-House Sports Day"
@@ -106,9 +106,9 @@ export default function EventsPage() {
                             location="Sports Complex"
                             icon={<FaRunning className="text-3xl text-purple-600" />}
                             color="purple"
-                        />
+                        /> */}
 
-                        <EventCard
+                        {/* <EventCard
                             date="22"
                             month="April 2025"
                             title="Parent-Teacher Conference"
@@ -117,9 +117,9 @@ export default function EventsPage() {
                             location="Individual Classrooms"
                             icon={<FaUsers className="text-3xl text-orange-600" />}
                             color="orange"
-                        />
+                        /> */}
 
-                        <EventCard
+                        {/* <EventCard
                             date="05"
                             month="May 2025"
                             title="Art Exhibition Opening"
@@ -128,9 +128,9 @@ export default function EventsPage() {
                             location="Art Gallery"
                             icon={<FaPalette className="text-3xl text-pink-600" />}
                             color="pink"
-                        />
+                        /> */}
 
-                        <EventCard
+                        {/* <EventCard
                             date="20"
                             month="May 2025"
                             title="Graduation Ceremony"
@@ -139,7 +139,7 @@ export default function EventsPage() {
                             location="Main Auditorium"
                             icon={<FaGraduationCap className="text-3xl text-teal-600" />}
                             color="teal"
-                        />
+                        /> */}
                     </div>
                 </div>
             </section>
