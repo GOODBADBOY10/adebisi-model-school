@@ -70,7 +70,7 @@ export default function EventsPage() {
                             custom={1}
                             className="text-lg text-gray-600 max-w-3xl mx-auto"
                         >
-                            Don&apos;t miss out on these exciting upcoming events at Pinnacle Academy
+                            Don&apos;t miss out on these exciting upcoming events at ADEBISI MODEL SCHOOLS
                         </motion.p>
                     </motion.div>
 
