@@ -13,7 +13,7 @@ import {
     FaBell,
     FaCalendarPlus
 } from "react-icons/fa";
-import { FaBookOpen, FaFlag } from "react-icons/fa6";
+import { FaBookOpen, FaFlag, FaPlaneDeparture, FaUmbrellaBeach } from "react-icons/fa6";
 
 export default function EventsPage() {
     const cardMotion = {
@@ -121,6 +121,17 @@ export default function EventsPage() {
                         />
 
                         <EventCard
+                            date="06-07"
+                            month="November 2025"
+                            title="MID-TERM BREAK"
+                            description="A short break following the mid-term tests to give students and teachers time to relax and refresh before resuming for the second half of the term."
+                            time="All Day"
+                            location="School Closed"
+                            icon={<FaUmbrellaBeach className="text-3xl text-cyan-600" />}
+                            color="cyan"
+                        />
+
+                        <EventCard
                             date="01"
                             month="October 2025"
                             title="Independence Day Celebration"
@@ -131,16 +142,17 @@ export default function EventsPage() {
                             color="green"
                         />
 
-                        {/* <EventCard
-                            date="20"
-                            month="May 2025"
-                            title="Graduation Ceremony"
-                            description="Celebrating the achievements of our graduating class with a formal ceremony and reception."
-                            time="10:00 AM - 12:00 PM"
-                            location="Main Auditorium"
-                            icon={<FaGraduationCap className="text-3xl text-teal-600" />}
-                            color="teal"
-                        /> */}
+                        <EventCard
+                            date="19"
+                            month="December 2025"
+                            title="END OF TERM VACATION"
+                            description="The official closing of the academic term. Students proceed on vacation after weeks of hard work, assessments, and activities, preparing to resume refreshed for the next term."
+                            time="All Day"
+                            location="Adebisi Model Schools"
+                            icon={<FaPlaneDeparture className="text-3xl text-red-600" />}
+                            color="red"
+                        />
+                        
                     </div>
 
                 </div>
