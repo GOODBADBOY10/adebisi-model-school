@@ -13,6 +13,7 @@ import {
     FaBell,
     FaCalendarPlus
 } from "react-icons/fa";
+import { FaBookOpen, FaFlag } from "react-icons/fa6";
 
 export default function EventsPage() {
     const cardMotion = {
@@ -86,49 +87,49 @@ export default function EventsPage() {
                             color="blue"
                         />
 
-                        {/* <EventCard
-                            date="02"
-                            month="April 2025"
-                            title="Spring Drama Performance"
-                            description="Our talented drama club presents their spring production featuring classic and contemporary pieces."
-                            time="7:00 PM - 9:30 PM"
-                            location="School Theater"
+                        <EventCard
+                            date="04"
+                            month="November 2025"
+                            title="OPEN DAY: PRIMARY SCHOOL"
+                            description="A special event where parents and guardians visit our primary section to view class displays, interact with teachers, and gain insights into pupils' learning experiences."
+                            time="9:00 AM - 2:00 PM"
+                            location="Adebisi Model Nursery & Primary School"
                             icon={<FaTheaterMasks className="text-3xl text-green-600" />}
                             color="green"
-                        /> */}
+                        />
 
-                        {/* <EventCard
-                            date="15"
-                            month="April 2025"
-                            title="Inter-House Sports Day"
-                            description="Annual sports competition between school houses featuring athletics, team sports, and fun activities."
-                            time="8:00 AM - 5:00 PM"
-                            location="Sports Complex"
-                            icon={<FaRunning className="text-3xl text-purple-600" />}
-                            color="purple"
-                        /> */}
-
-                        {/* <EventCard
-                            date="22"
-                            month="April 2025"
-                            title="Parent-Teacher Conference"
-                            description="Individual meetings between parents and teachers to discuss student progress and development."
-                            time="2:00 PM - 6:00 PM"
-                            location="Individual Classrooms"
-                            icon={<FaUsers className="text-3xl text-orange-600" />}
-                            color="orange"
-                        /> */}
-
-                        {/* <EventCard
+                        <EventCard
                             date="05"
-                            month="May 2025"
-                            title="Art Exhibition Opening"
-                            description="Showcase of student artwork from all grade levels in our annual art exhibition and competition."
-                            time="6:00 PM - 8:00 PM"
-                            location="Art Gallery"
-                            icon={<FaPalette className="text-3xl text-pink-600" />}
-                            color="pink"
-                        /> */}
+                            month="November 2025"
+                            title="OPEN DAY: SECONDARY SCHOOL"
+                            description="An open opportunity for parents to tour our college environment, review students’ academic works, and engage with subject teachers about individual progress and improvement."
+                            time="9:00 AM - 2:00 PM"
+                            location="Al-Firdaus Model College"
+                            icon={<FaTheaterMasks className="text-3xl text-purple-600" />}
+                            color="purple"
+                        />
+
+                        <EventCard
+                            date="03-05"
+                            month="November 2025"
+                            title="MID-TERM TEST"
+                            description="Scheduled mid-term examinations across all classes designed to evaluate students’ comprehension and mastery of subjects taught during the term."
+                            time="9:00 AM - 3:00 PM"
+                            location="Adebisi Model Schools"
+                            icon={<FaBookOpen className="text-3xl text-orange-600" />}
+                            color="orange"
+                        />
+
+                        <EventCard
+                            date="01"
+                            month="October 2025"
+                            title="Independence Day Celebration"
+                            description="A national holiday commemorating Nigeria's independence. Join us as we celebrate with cultural displays, performances, and patriotic activities promoting unity and pride among students."
+                            time="9:00 AM - 12:00 PM"
+                            location="School Field"
+                            icon={<FaFlag className="text-3xl text-green-600" />}
+                            color="green"
+                        />
 
                         {/* <EventCard
                             date="20"
@@ -141,6 +142,7 @@ export default function EventsPage() {
                             color="teal"
                         /> */}
                     </div>
+
                 </div>
             </section>
 
